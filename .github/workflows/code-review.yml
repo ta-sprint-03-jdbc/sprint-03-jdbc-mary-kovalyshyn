@@ -83,30 +83,6 @@ jobs:
           Student's code:
           $CONTEXT"
 
-          ✅ WHAT IS DONE WELL:
-          - List specific things the student implemented correctly
-          - Mention good practices they followed
-
-          ⚠️ WHAT CAN BE IMPROVED:
-          - List concrete issues or missed requirements
-          - For each issue, provide a short example of how to fix it, like:
-
-            Instead of:
-            \`\`\`java
-            Statement stmt = conn.createStatement();
-            stmt.execute(\"SELECT * FROM category WHERE id = \" + id);
-            \`\`\`
-            Do this:
-            \`\`\`java
-            PreparedStatement stmt = conn.prepareStatement(\"SELECT * FROM category WHERE id = ?\");
-            stmt.setLong(1, id);
-            \`\`\`
-
-          Keep feedback constructive, specific, and beginner-friendly.
-
-          Student's code:
-          $CONTEXT"
-
           ESCAPED_PROMPT=$(echo "$PROMPT" | python3 -c 'import json, sys; print(json.dumps(sys.stdin.read()))')
 
           RESPONSE=$(curl -s https://api.anthropic.com/v1/messages \
