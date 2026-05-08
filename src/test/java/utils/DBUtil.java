@@ -45,7 +45,7 @@ public class DBUtil {
                 // Fallback to hardcoded values
                 System.out.println("[DEBUG_LOG] Using hardcoded connection properties");
                 return DriverManager
-                        .getConnection("jdbc:postgresql://localhost:5432/postgres", "postgres", "root");
+                        .getConnection("jdbc:postgresql://localhost:5432/postgres", "$POSTGRES_USER", "$POSTGRES_PASSWORD");
             }
         } catch (SQLException e) {
             System.out.println("[DEBUG_LOG] Database connection failed: " + e.getMessage());
